@@ -1,7 +1,6 @@
 @import url('https://googleapis.com');
 
 html {
-    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UNGGAH DENGAN BENAR */
     background: url('bg.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -11,12 +10,11 @@ html {
     overflow-x: hidden;
 }
 
-/* Lapisan Gelap Tambahan Agar Teks Tetap Jelas Dibaca */
 html::before {
     content: '';
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(5, 2, 15, 0.45); /* Memberikan efek redup kosmik */
+    background: rgba(5, 2, 15, 0.45);
     z-index: -1;
 }
 
@@ -38,7 +36,7 @@ body {
     text-align: center !important;
 }
 
-.title-container {
+.title-container, header {
     margin-bottom: -10px !important;
     display: flex;
     flex-direction: column;
@@ -54,18 +52,18 @@ body {
     margin-bottom: 5px;
 }
 
-/* ANIMASI KILAU UNGU & BIRU NEON UNTUK HALAMAN DEPAN DAN HALAMAN KEDUA (RAN) */
-.name-mustafa, .name-khamba {
+/* MEMAKSA WARNA UNGU NEON DI HALAMAN 1 DAN HALAMAN 2 (RAN) */
+.name-mustafa, .name-khamba, .main-title, #menu h1:first-child {
     display: block;
-    font-size: 3.5rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: neonShine 3s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6));
-    letter-spacing: 5px;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: neonShine 3s linear infinite !important;
+    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6)) !important;
+    letter-spacing: 5px !important;
 }
 
 @keyframes neonShine {
@@ -115,7 +113,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-hr {
+hr, .separator {
     border: none;
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.3), transparent);
@@ -123,8 +121,7 @@ hr {
     width: 85%;
 }
 
-/* KOTAK DASBOR: Efek Kaca Gelap Mewah (Blur Transparan) */
-#menu, #crypto {
+#menu, #crypto, .container {
     width: 100%;
     max-width: 460px;
     padding: 35px 25px;
@@ -138,24 +135,6 @@ hr {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-}
-
-#menu h1 {
-    font-size: 22px;
-    color: #00bfff !important;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
-    margin-bottom: 25px;
-}
-
-h1#msgs {
-    font-size: 20px;
-    color: #00bfff;
-    margin: 20px auto;
-    padding: 15px;
-    width: 90%;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    border: 1px solid rgba(138, 43, 226, 0.2);
 }
 
 .btn {
@@ -189,13 +168,13 @@ h1#msgs {
     display: none !important;
 }
 
-.credit {
+.credit, footer p {
     font-size: 0.95rem;
     margin-top: 25px;
     color: #aaa;
 }
 
-.credit-link {
+.credit-link, footer a {
     background: linear-gradient(90deg, #ffd700, #ffaa00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -210,11 +189,11 @@ h1#msgs {
 }
 
 @media (max-width: 600px) {
-    #menu {
+    #menu, .container {
         padding: 30px 20px;
         width: 92%;
     }
-    .name-mustafa, .name-khamba {
-        font-size: 2.6rem;
+    .name-mustafa, .name-khamba, .main-title, #menu h1:first-child {
+        font-size: 2.6rem !important;
     }
 }
