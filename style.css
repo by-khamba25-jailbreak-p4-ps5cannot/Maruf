@@ -29,7 +29,7 @@ body {
     box-sizing: border-box;
 }
 
-.title-container, #menu, #crypto {
+.title-container, #menu, #crypto, header {
     float: none !important;
     position: static !important;
     margin: 0 auto !important;
@@ -52,9 +52,9 @@ body {
     margin-bottom: 5px;
 }
 
-/* MEMAKSA WARNA UNGU NEON DI HALAMAN 1 DAN HALAMAN 2 (RAN) */
-.name-mustafa, .name-khamba, .main-title, #menu h1:first-child {
-    display: block;
+/* KHAMBA NEON HANYA UNTUK NAMA UTAMA - TIDAK MERUSAK TEKS LAIN */
+.name-mustafa, .name-khamba {
+    display: block !important;
     font-size: 3.5rem !important;
     font-weight: 900 !important;
     background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff) !important;
@@ -121,6 +121,7 @@ hr, .separator {
     width: 85%;
 }
 
+/* KOTAK MENU: Mengembalikan teks menu di dalamnya menjadi normal dan rapi */
 #menu, #crypto, .container {
     width: 100%;
     max-width: 460px;
@@ -135,6 +136,31 @@ hr, .separator {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+}
+
+/* Merapikan kembali teks di dalam kotak menu */
+#menu h1, .container h1 {
+    font-size: 22px !important;
+    color: #00bfff !important;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+    margin-bottom: 25px;
+    background: none !important;
+    -webkit-text-fill-color: #00bfff !important;
+    animation: none !important;
+    filter: none !important;
+    letter-spacing: normal !important;
+}
+
+h1#msgs {
+    font-size: 20px !important;
+    color: #00bfff !important;
+    margin: 20px auto !important;
+    padding: 15px !important;
+    width: 90% !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(138, 43, 226, 0.2) !important;
+    -webkit-text-fill-color: #00bfff !important;
 }
 
 .btn {
@@ -169,23 +195,23 @@ hr, .separator {
 }
 
 .credit, footer p {
-    font-size: 0.95rem;
-    margin-top: 25px;
-    color: #aaa;
+    font-size: 0.95rem !important;
+    margin-top: 25px !important;
+    color: #aaa !important;
 }
 
 .credit-link, footer a {
-    background: linear-gradient(90deg, #ffd700, #ffaa00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-weight: 700;
-    font-size: 1.1rem;
+    background: linear-gradient(90deg, #ffd700, #ffaa00) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    font-weight: 700 !important;
+    font-size: 1.1rem !important;
 }
 
 .thanks {
-    font-size: 0.8rem;
-    color: #555;
-    margin-top: 5px;
+    font-size: 0.8rem !important;
+    color: #555 !important;
+    margin-top: 5px !important;
 }
 
 @media (max-width: 600px) {
@@ -193,7 +219,7 @@ hr, .separator {
         padding: 30px 20px;
         width: 92%;
     }
-    .name-mustafa, .name-khamba, .main-title, #menu h1:first-child {
+    .name-mustafa, .name-khamba {
         font-size: 2.6rem !important;
     }
 }
