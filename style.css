@@ -1,14 +1,23 @@
 @import url('https://googleapis.com');
 
 html {
-    /* Tema Baru: Ungu Deep Cosmic dengan kombinasi Hitam Cyberpunk Gelap */
-    background: radial-gradient(circle at center, #1b0a2e 0%, #070312 65%, #010003 100%);
-    background-attachment: fixed;
+    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UGGAH DENGAN BENAR */
+    background: url('bg.png') no-repeat center center fixed;
+    background-size: cover;
     min-height: 100vh;
     color: white;
     text-align: center;
     font-family: 'Rajdhani', sans-serif;
     overflow-x: hidden;
+}
+
+/* Lapisan Gelap Tambahan Agar Teks Tetap Jelas Dibaca */
+html::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(5, 2, 15, 0.45); /* Memberikan efek redup kosmik */
+    z-index: -1;
 }
 
 body {
@@ -22,7 +31,6 @@ body {
     box-sizing: border-box;
 }
 
-/* MEMAKSA SEMUA ELEMEN BERGABUNG DAN BERKUMPUL DI TENGAH */
 .title-container, #menu, #crypto {
     float: none !important;
     position: static !important;
@@ -30,9 +38,8 @@ body {
     text-align: center !important;
 }
 
-/* MODIFIKASI HUD JUDUL UTAMA (KHAMBA PS4 PS5) */
 .title-container {
-    margin-bottom: -10px !important; /* Merapatkan jarak ke kotak menu */
+    margin-bottom: -10px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -47,7 +54,7 @@ body {
     margin-bottom: 5px;
 }
 
-/* KHAMBA: Efek Kilau Emas Mewah yang Berkedip Lembut */
+/* Animasi Kilau Emas Khamba */
 .name-mustafa {
     display: block;
     font-size: 3.5rem;
@@ -65,12 +72,11 @@ body {
     to { background-position: 200% center; }
 }
 
-/* Warna Baru PS4 & PS5 Neon */
 .ps4-title {
     display: inline-block;
     font-size: 1.6rem;
     font-weight: 800;
-    color: #00bfff; /* Biru Neon PlayStation */
+    color: #00bfff;
     text-shadow: 0 0 12px rgba(0, 191, 255, 0.7);
     margin: 5px 10px;
 }
@@ -79,7 +85,7 @@ body {
     display: inline-block;
     font-size: 1.6rem;
     font-weight: 800;
-    color: #b057ff; /* Ungu Neon Kebiruan */
+    color: #b057ff;
     text-shadow: 0 0 12px rgba(176, 87, 255, 0.8);
     margin: 5px 10px;
 }
@@ -94,7 +100,6 @@ body {
     margin-top: 5px;
 }
 
-/* Badge Versi FW Keren di Atas Kotak */
 .version-badge {
     display: inline-block;
     background: linear-gradient(135deg, #8a2be2, #00bfff);
@@ -118,21 +123,18 @@ hr {
     width: 85%;
 }
 
-/* MODIFIKASI TOTAL KOTAK MENU MENJADI DASHBOARD PUSAT */
+/* KOTAK DASBOR: Efek Kaca Gelap Mewah (Blur Transparan) */
 #menu, #crypto {
     width: 100%;
     max-width: 460px;
     padding: 35px 25px;
     box-sizing: border-box;
-    /* Kartu Transparan Gelap Premium */
-    background: rgba(10, 4, 22, 0.85) !important;
+    background: rgba(10, 4, 22, 0.75) !important; 
     border-radius: 24px;
-    border: 1px solid rgba(138, 43, 226, 0.3);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 
-                0 0 40px rgba(138, 43, 226, 0.15);
-    
+    border: 1px solid rgba(138, 43, 226, 0.25);
+    backdrop-filter: blur(25px); 
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8), 0 0 40px rgba(138, 43, 226, 0.15);
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -140,7 +142,7 @@ hr {
 
 #menu h1 {
     font-size: 22px;
-    color: #00bfff !important; /* Mengubah judul menu dari kuning ke Biru Neon */
+    color: #00bfff !important;
     text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
     margin-bottom: 25px;
 }
@@ -151,12 +153,11 @@ h1#msgs {
     margin: 20px auto;
     padding: 15px;
     width: 90%;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.6);
     border-radius: 12px;
     border: 1px solid rgba(138, 43, 226, 0.2);
 }
 
-/* TOMBOL UTAMA DENGAN EFEK UNGU GLOW PREMIUM */
 .btn {
     background: linear-gradient(145deg, #240046, #0f001e);
     color: white;
@@ -178,23 +179,20 @@ h1#msgs {
 }
 
 .btn:hover {
-    /* Efek menyala biru-ungu hologram saat disorot */
     background: linear-gradient(145deg, #440080, #240046);
     transform: scale(1.05) translateY(-2px);
     box-shadow: 0 0 30px rgba(164, 99, 255, 0.5), 0 0 15px rgba(0, 191, 255, 0.3);
     border-color: #00bfff;
 }
 
-/* Sembunyikan elemen bawaan yang tidak terpakai agar rapi */
 #tools, #lnx, #mods, #progress {
     display: none !important;
 }
 
-/* BAGIAN BAWAH (CREDIT) */
 .credit {
     font-size: 0.95rem;
     margin-top: 25px;
-    color: #888;
+    color: #aaa;
 }
 
 .credit-link {
@@ -207,11 +205,10 @@ h1#msgs {
 
 .thanks {
     font-size: 0.8rem;
-    color: #444;
+    color: #555;
     margin-top: 5px;
 }
 
-/* Responsif Optimal untuk Layar HP / Konsol */
 @media (max-width: 600px) {
     #menu {
         padding: 30px 20px;
