@@ -54,21 +54,21 @@ body {
     margin-bottom: 5px;
 }
 
-/* Animasi Kilau Emas Khamba */
+/* ANIMASI KILAU UNGU & BIRU NEON UTAMAKAN NAMA KHAMBA */
 .name-mustafa {
     display: block;
     font-size: 3.5rem;
     font-weight: 900;
-    background: linear-gradient(90deg, #ffd700, #ffaa00, #ffd700, #ffec80, #ffd700);
+    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: goldShine 3s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+    animation: neonShine 3s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6));
     letter-spacing: 5px;
 }
 
-@keyframes goldShine {
+@keyframes neonShine {
     to { background-position: 200% center; }
 }
 
