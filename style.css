@@ -1,7 +1,7 @@
 @import url('https://googleapis.com');
 
 html {
-    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UNGGAH DENGAN BENAR */
+    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UGGAH DENGAN BENAR */
     background: url('bg.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -54,21 +54,21 @@ body {
     margin-bottom: 5px;
 }
 
-/* ANIMASI KILAU UNGU & BIRU NEON UNTUK HALAMAN DEPAN DAN HALAMAN KEDUA (RAN) */
-.name-mustafa, .name-khamba {
+/* Animasi Kilau Emas Khamba */
+.name-mustafa {
     display: block;
     font-size: 3.5rem;
     font-weight: 900;
-    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff);
+    background: linear-gradient(90deg, #ffd700, #ffaa00, #ffd700, #ffec80, #ffd700);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: neonShine 3s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6));
+    animation: goldShine 3s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
     letter-spacing: 5px;
 }
 
-@keyframes neonShine {
+@keyframes goldShine {
     to { background-position: 200% center; }
 }
 
@@ -214,7 +214,7 @@ h1#msgs {
         padding: 30px 20px;
         width: 92%;
     }
-    .name-mustafa, .name-khamba {
+    .name-mustafa {
         font-size: 2.6rem;
     }
 }
