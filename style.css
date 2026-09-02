@@ -1,8 +1,8 @@
 @import url('https://googleapis.com');
 
 html {
-    /* Mengubah latar belakang menjadi hitam futuristik dengan gradasi biru neon gelap */
-    background: linear-gradient(135deg, #020208, #050c1e, #0a1128);
+    /* Tema Ungu Gelap Cosmic dan Hitam Pekat Cyberpunk */
+    background: radial-gradient(circle at center, #1a0b36 0%, #0a0518 60%, #020105 100%);
     background-attachment: fixed;
     min-height: 100vh;
     color: white;
@@ -20,246 +20,186 @@ body {
     align-items: center;
 }
 
-h1 {
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
-    font-size: 25px;
-    color: #ffffff;
-    margin-bottom: 20px;
-    font-family: 'Orbitron', sans-serif;
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
 }
 
-h1#msgs {
-    font-size: 22px;
-    color: #00bfff;
-    margin: 40px auto;
-    padding: 20px;
-    max-width: 80%;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 15px;
-    border: 1px solid rgba(0, 191, 255, 0.3);
-    font-family: 'Rajdhani', sans-serif;
-    box-shadow: 0 0 20px rgba(0, 191, 255, 0.1);
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #00bfff, transparent);
-    margin: 20px auto;
-    width: 80%;
-}
-
-#progress {
-    display: block;
-    width: 80%;
-    margin: 20px auto;
-    height: 8px;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    overflow: hidden;
-}
-
+/* Modifikasi Kotak Menu Utama Menjadi Kartu Mengambang */
 #menu {
     display: block;
-    max-width: 600px;
+    width: 100%;
+    max-width: 500px;
     margin: 0 auto;
-    padding: 30px;
-    background: rgba(5, 12, 30, 0.6);
-    border-radius: 24px;
-    border: 1px solid rgba(0, 191, 255, 0.2);
-    backdrop-filter: blur(15px);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5), inset 0 0 20px rgba(0, 191, 255, 0.05);
+    padding: 40px 30px;
+    background: rgba(10, 5, 24, 0.75);
+    border-radius: 30px;
+    /* Border Neon Tipis perpaduan Ungu dan Biru */
+    border: 1px solid rgba(157, 78, 221, 0.3);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 
+                0 0 40px rgba(157, 78, 221, 0.15);
 }
 
-#crypto {
-    display: none;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-#tools {
-    display: none;
-}
-
-#lnx {
-    display: none;
-}
-
-#mods {
-    display: none;
-}
-
-.btn {
-    /* Desain tombol cyber biru gelap yang sangat premium */
-    background: linear-gradient(145deg, #0a1c3a, #030f26);
-    color: white;
-    width: 280px;
-    height: 50px;
-    padding-bottom: 5px;
-    text-align: center;
-    font-size: 17px;
-    font-weight: 600;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    margin-left: 5px;
-    margin-right: 5px;
-    border: 1px solid rgba(0, 191, 255, 0.3);
-    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    cursor: pointer;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    font-family: 'Rajdhani', sans-serif;
-}
-
-.btn:hover {
-    /* Efek menyala neon biru terang saat disorot */
-    background: linear-gradient(145deg, #00bfff, #007bb5);
-    color: #030f26;
-    transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(0, 191, 255, 0.6);
-    border-color: #ffffff;
-    font-weight: 700;
-}
-
-.btn-onln {
-    background: linear-gradient(145deg, #0d3b26, #051f14);
-    border-color: rgba(46, 204, 113, 0.3);
-}
-
-.btn-onln:hover {
-    background: linear-gradient(145deg, #2ecc71, #27ae60);
-    color: #051f14;
-    box-shadow: 0 0 25px rgba(46, 204, 113, 0.6);
-}
-
-/* تنسيق خاص للعنوان */
 .title-container {
-    margin-bottom: 30px;
+    margin: 25px 0;
 }
 
 .main-title {
     font-family: 'Orbitron', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2.4rem;
     font-weight: 900;
-    line-height: 1.4;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
+    letter-spacing: 2px;
 }
 
+/* Tetap pakai nama kelas asli agar warna emas berkilau Khamba tidak hilang */
 .name-mustafa {
     display: block;
-    font-size: 3rem;
+    font-size: 3.2rem;
     font-weight: 900;
-    /* Efek kilau emas legendaris Khamba tetap dipertahankan */
     background: linear-gradient(90deg, #ffd700, #ffaa00, #ffd700, #ffec80, #ffd700);
     background-size: 200% auto;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: goldShine 3s linear infinite;
-    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.4));
-    letter-spacing: 5px;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.3));
+    letter-spacing: 4px;
 }
 
 @keyframes goldShine {
     to { background-position: 200% center; }
 }
 
+/* Sentuhan Warna Biru Neon PlayStation */
 .ps4-title {
     display: inline-block;
-    font-size: 2rem;
-    font-weight: 700;
+    font-size: 1.8rem;
+    font-weight: 800;
     color: #00bfff;
-    text-shadow: 0 0 15px rgba(0, 191, 255, 0.8), 0 0 30px rgba(0, 191, 255, 0.4);
-    margin: 10px 10px;
-    letter-spacing: 4px;
+    text-shadow: 0 0 15px rgba(0, 191, 255, 0.6);
+    margin: 5px 12px;
 }
 
 .ps5-title {
     display: inline-block;
-    font-size: 2rem;
-    font-weight: 700;
-    color: #ff4757;
-    text-shadow: 0 0 15px rgba(255, 71, 87, 0.8), 0 0 30px rgba(255, 71, 87, 0.4);
-    margin: 10px 10px;
-    letter-spacing: 4px;
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #8a2be2;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.8);
+    margin: 5px 12px;
 }
 
 .subtitle {
-    font-family: 'Rajdhani', sans-serif;
-    font-size: 1.2rem;
-    color: #00bfff;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.3);
-    letter-spacing: 6px;
+    font-size: 1.1rem;
+    color: #9d4ede;
+    letter-spacing: 4px;
     text-transform: uppercase;
-    margin-bottom: 15px;
     font-weight: 600;
+    margin-top: 5px;
 }
 
+/* Posisi Baru Badge Versi di Atas Halaman */
 .version-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #00bfff, #ff4757);
+    background: linear-gradient(135deg, #7b2cbf, #00bfff);
     color: #ffffff;
-    padding: 8px 25px;
-    border-radius: 30px;
-    font-weight: 800;
-    font-size: 1rem;
-    margin: 15px 0 25px;
-    box-shadow: 0 5px 25px rgba(0, 191, 255, 0.3);
-    letter-spacing: 2px;
-    text-transform: uppercase;
+    padding: 6px 20px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    box-shadow: 0 0 15px rgba(123, 44, 191, 0.4);
+    letter-spacing: 1px;
     font-family: 'Orbitron', sans-serif;
-    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* الفوتر */
-.credit {
-    font-size: 1.1rem;
-    margin-bottom: 5px;
+hr {
+    border: none;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.4), transparent);
+    margin: 25px auto;
+    width: 90%;
+}
+
+.exploit-section {
+    margin: 30px 0;
+}
+
+.section-title {
+    font-size: 1.2rem;
     color: #ddd;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Desain Tombol Ungu Cyber Premium */
+.btn {
+    background: linear-gradient(145deg, #240046, #10002b);
+    color: white;
+    width: 100%;
+    max-width: 320px;
+    height: 55px;
+    font-size: 18px;
+    font-weight: 700;
+    border: 1px solid rgba(157, 78, 221, 0.5);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    cursor: pointer;
+    border-radius: 16px;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.btn:hover {
+    /* Efek Menyala Ungu-Biru Sempurna Saat Didekatkan */
+    background: linear-gradient(145deg, #3c096c, #240046);
+    transform: translateY(-4px);
+    box-shadow: 0 0 30px rgba(157, 78, 221, 0.6), 0 0 15px rgba(0, 191, 255, 0.3);
+    border-color: #00bfff;
+}
+
+.btn-icon {
+    display: inline-block;
+    margin: 0 5px;
+    color: #00bfff;
+}
+
+/* Bagian Footer Bawah */
+footer {
+    margin-top: 35px;
+}
+
+.credit-text {
+    font-size: 1rem;
+    color: #aaa;
     font-weight: 500;
 }
 
 .credit-link {
-    background: linear-gradient(90deg, #ffd700, #ffaa00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-decoration: none;
-    font-weight: 800;
-    font-size: 1.3rem;
+    color: #ffd700;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
 }
 
 .thanks {
-    font-size: 0.95rem;
-    color: #666;
-    margin-top: 10px;
-    letter-spacing: 1px;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 8px;
 }
 
-/* استجابة للموبايل */
+/* Responsif Layar HP */
 @media (max-width: 600px) {
-    .btn {
-        width: 90%;
+    #menu {
+        padding: 30px 20px;
     }
-    
     .main-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
     }
-    
     .name-mustafa {
-        font-size: 2.5rem;
+        font-size: 2.6rem;
     }
-    
-    .ps4-title, .ps5-title {
-        font-size: 1.6rem;
+    .btn {
+        width: 100%;
     }
 }
