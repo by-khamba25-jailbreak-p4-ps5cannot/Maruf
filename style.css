@@ -1,6 +1,7 @@
 @import url('https://googleapis.com');
 
 html {
+    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UNGGAH DENGAN BENAR */
     background: url('bg.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -10,11 +11,12 @@ html {
     overflow-x: hidden;
 }
 
+/* Lapisan Gelap Tambahan Agar Teks Tetap Jelas Dibaca */
 html::before {
     content: '';
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(5, 2, 15, 0.45);
+    background: rgba(5, 2, 15, 0.45); /* Memberikan efek redup kosmik */
     z-index: -1;
 }
 
@@ -29,14 +31,14 @@ body {
     box-sizing: border-box;
 }
 
-.title-container, #menu, #crypto, header {
+.title-container, #menu, #crypto {
     float: none !important;
     position: static !important;
     margin: 0 auto !important;
     text-align: center !important;
 }
 
-.title-container, header {
+.title-container {
     margin-bottom: -10px !important;
     display: flex;
     flex-direction: column;
@@ -52,18 +54,18 @@ body {
     margin-bottom: 5px;
 }
 
-/* KHAMBA NEON HANYA UNTUK NAMA UTAMA - TIDAK MERUSAK TEKS LAIN */
+/* ANIMASI KILAU UNGU & BIRU NEON UNTUK HALAMAN DEPAN DAN HALAMAN KEDUA (RAN) */
 .name-mustafa, .name-khamba {
-    display: block !important;
-    font-size: 3.5rem !important;
-    font-weight: 900 !important;
-    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff) !important;
-    background-size: 200% auto !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    animation: neonShine 3s linear infinite !important;
-    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6)) !important;
-    letter-spacing: 5px !important;
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 900;
+    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neonShine 3s linear infinite;
+    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6));
+    letter-spacing: 5px;
 }
 
 @keyframes neonShine {
@@ -113,7 +115,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-hr, .separator {
+hr {
     border: none;
     height: 1px;
     background: linear-gradient(to right, transparent, rgba(0, 191, 255, 0.3), transparent);
@@ -121,8 +123,8 @@ hr, .separator {
     width: 85%;
 }
 
-/* KOTAK MENU: Mengembalikan teks menu di dalamnya menjadi normal dan rapi */
-#menu, #crypto, .container {
+/* KOTAK DASBOR: Efek Kaca Gelap Mewah (Blur Transparan) */
+#menu, #crypto {
     width: 100%;
     max-width: 460px;
     padding: 35px 25px;
@@ -138,29 +140,22 @@ hr, .separator {
     align-items: center !important;
 }
 
-/* Merapikan kembali teks di dalam kotak menu */
-#menu h1, .container h1 {
-    font-size: 22px !important;
+#menu h1 {
+    font-size: 22px;
     color: #00bfff !important;
     text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
     margin-bottom: 25px;
-    background: none !important;
-    -webkit-text-fill-color: #00bfff !important;
-    animation: none !important;
-    filter: none !important;
-    letter-spacing: normal !important;
 }
 
 h1#msgs {
-    font-size: 20px !important;
-    color: #00bfff !important;
-    margin: 20px auto !important;
-    padding: 15px !important;
-    width: 90% !important;
-    background: rgba(0, 0, 0, 0.6) !important;
-    border-radius: 12px !important;
-    border: 1px solid rgba(138, 43, 226, 0.2) !important;
-    -webkit-text-fill-color: #00bfff !important;
+    font-size: 20px;
+    color: #00bfff;
+    margin: 20px auto;
+    padding: 15px;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+    border: 1px solid rgba(138, 43, 226, 0.2);
 }
 
 .btn {
@@ -194,32 +189,32 @@ h1#msgs {
     display: none !important;
 }
 
-.credit, footer p {
-    font-size: 0.95rem !important;
-    margin-top: 25px !important;
-    color: #aaa !important;
+.credit {
+    font-size: 0.95rem;
+    margin-top: 25px;
+    color: #aaa;
 }
 
-.credit-link, footer a {
-    background: linear-gradient(90deg, #ffd700, #ffaa00) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    font-weight: 700 !important;
-    font-size: 1.1rem !important;
+.credit-link {
+    background: linear-gradient(90deg, #ffd700, #ffaa00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    font-size: 1.1rem;
 }
 
 .thanks {
-    font-size: 0.8rem !important;
-    color: #555 !important;
-    margin-top: 5px !important;
+    font-size: 0.8rem;
+    color: #555;
+    margin-top: 5px;
 }
 
 @media (max-width: 600px) {
-    #menu, .container {
+    #menu {
         padding: 30px 20px;
         width: 92%;
     }
     .name-mustafa, .name-khamba {
-        font-size: 2.6rem !important;
+        font-size: 2.6rem;
     }
 }
