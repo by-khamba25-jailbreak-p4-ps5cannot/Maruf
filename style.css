@@ -1,7 +1,7 @@
 @import url('https://googleapis.com');
 
 html {
-    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UGGAH DENGAN BENAR */
+    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UNGGAH DENGAN BENAR */
     background: url('bg.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -54,8 +54,8 @@ body {
     margin-bottom: 5px;
 }
 
-/* ANIMASI KILAU UNGU & BIRU NEON UTAMAKAN NAMA KHAMBA */
-.name-mustafa {
+/* ANIMASI KILAU UNGU & BIRU NEON UNTUK HALAMAN DEPAN DAN HALAMAN KEDUA (RAN) */
+.name-mustafa, .name-khamba {
     display: block;
     font-size: 3.5rem;
     font-weight: 900;
@@ -214,7 +214,7 @@ h1#msgs {
         padding: 30px 20px;
         width: 92%;
     }
-    .name-mustafa {
+    .name-mustafa, .name-khamba {
         font-size: 2.6rem;
     }
 }
