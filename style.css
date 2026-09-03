@@ -15,7 +15,7 @@ html::before {
     content: '';
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(4, 2, 12, 0.5);
+    background: rgba(4, 2, 12, 0.55);
     z-index: -1;
 }
 
@@ -38,7 +38,7 @@ body {
 }
 
 .title-container {
-    margin-bottom: -10px !important;
+    margin-bottom: 20px !important;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -126,7 +126,7 @@ hr {
     width: 85%;
 }
 
-/* DASHBOARD: Efek Kaca Transparan Cyberpunk Mewah */
+/* DASHBOARD HALAMAN UTAMA */
 #menu, #crypto {
     width: 100%;
     max-width: 460px;
@@ -145,29 +145,77 @@ hr {
 
 #menu h1 {
     font-size: 22px;
-    color: #ffd700 !important; /* Disamakan warna emas mewah */
+    color: #ffd700 !important;
     text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
     margin-bottom: 25px;
     font-family: 'Orbitron', sans-serif;
 }
 
-/* KOTAK STATUS LOADING PADA HALAMAN UTAMA & DALAM */
-h1#msgs, .status-bar {
+/* WADAH UTAMA KOTAK STATUS (BERLAKU UNTUK SEMUA TEKS BERUBAH) */
+h1#msgs, .status-bar, body > .container > .status-bar {
+    font-family: 'Orbitron', sans-serif !important;
     font-size: 19px !important;
-    color: #00bfff !important;
-    font-weight: 700;
-    margin: 20px auto !important;
-    padding: 15px !important;
+    font-weight: 700 !important;
+    margin: 40px auto !important;
+    padding: 20px 30px !important;
     width: 90% !important;
-    background: rgba(0, 0, 0, 0.6) !important;
-    border-radius: 14px !important;
-    border: 1px solid rgba(138, 43, 226, 0.3) !important;
-    box-sizing: border-box;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
-    animation: pulse 1.5s infinite;
+    max-width: 500px !important;
+    
+    /* Efek Kaca Transparan Mewah */
+    background: rgba(10, 4, 22, 0.82) !important;
+    border-radius: 20px !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-sizing: border-box !important;
+    display: inline-block !important;
 }
 
-/* TOMBOL UTAMA (Sesuai Tombol Emas Elegan Anda) */
+/* 1. JIKA STATUS SEDANG LOADING / NORMAL (OTOMATIS BIRU NEON) */
+h1#msgs.loading, .status-text.loading {
+    color: #38bdf8 !important;
+    border: 1px solid rgba(0, 191, 255, 0.45) !important;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.6) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 191, 255, 0.2) !important;
+    animation: breathingPulse 2s ease-in-out infinite !important;
+}
+
+/* 2. JIKA STATUS ERROR / GAGAL / UNSUPPORTED (OTOMATIS MERAH NEON) */
+h1#msgs.error, .status-text.error {
+    color: #ff4757 !important;
+    border: 1px solid rgba(255, 71, 87, 0.5) !important;
+    text-shadow: 0 0 12px rgba(255, 71, 87, 0.7) !important;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(255, 71, 87, 0.3) !important;
+    animation: errorPulse 1.5s ease-in-out infinite !important;
+}
+
+/* ANIMASI BERDENYUT UNTUK KOTAK LOADING */
+@keyframes breathingPulse {
+    0%, 100% {
+        transform: scale(1);
+        border-color: rgba(0, 191, 255, 0.45);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 25px rgba(0, 191, 255, 0.2);
+    }
+    50% {
+        transform: scale(1.02);
+        border-color: rgba(176, 87, 255, 0.6);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(176, 87, 255, 0.4);
+    }
+}
+
+/* ANIMASI BERDENYUT CEPAT UNTUK KOTAK ERROR */
+@keyframes errorPulse {
+    0%, 100% {
+        transform: scale(1);
+        border-color: rgba(255, 71, 87, 0.5);
+    }
+    50% {
+        transform: scale(1.01);
+        border-color: rgba(255, 71, 87, 0.8);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7), 0 0 35px rgba(255, 71, 87, 0.5) !important;
+    }
+}
+
+/* TOMBOL UTAMA EMAS */
 .btn {
     background: linear-gradient(145deg, #ffd700, #ffaa00) !important;
     color: #1a1a1a !important;
@@ -216,11 +264,6 @@ h1#msgs, .status-bar {
     font-size: 0.8rem;
     color: #666;
     margin-top: 5px;
-}
-
-@keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.6; }
 }
 
 @media (max-width: 600px) {
