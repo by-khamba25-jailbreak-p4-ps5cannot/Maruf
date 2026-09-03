@@ -53,42 +53,48 @@ body {
     margin-bottom: 5px;
 }
 
-/* EFEK SUPER GLOW NEON BERGERAK UNTUK NAMA KHAMBA */
+/* PERBAIKAN: EFEK SUPER CAHAYA NEON BERDENYUT UNTUK NAMA KHAMBA */
 .name-mustafa, .name-khamba {
     display: block;
     font-family: 'Orbitron', sans-serif !important;
-    font-size: 3.8rem !important; /* Ukuran sedikit diperbesar agar gagah */
+    font-size: 3.8rem !important; 
     font-weight: 900 !important;
     letter-spacing: 6px !important;
     text-transform: uppercase !important;
     
-    /* Warna Dasar Gradasi Pelangi */
-    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff) !important;
+    /* Menggunakan Gradasi Warna Pelangi yang Lebih Terang */
+    background: linear-gradient(90deg, #d8b4fe, #38bdf8, #f43f5e, #d8b4fe) !important;
     background-size: 200% auto !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
     
-    /* Gabungan Animasi Kilau Pelangi + Animasi Cahaya Menyala Berdenyut */
-    animation: neonShine 3s linear infinite, neonGlowPulse 2s ease-in-out infinite alternate !important;
+    /* Menggunakan teknik text-shadow berlapis agar CAHAYA DIJAMIN MUNCUL */
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.6), 
+                 0 0 20px rgba(14, 165, 233, 0.5), 
+                 0 0 30px rgba(168, 85, 247, 0.3) !important;
+    
+    /* Jalankan animasi gerakan lambat dan denyut cahaya */
+    animation: neonShine 3s linear infinite, textGlowPulse 2s ease-in-out infinite alternate !important;
 }
 
-/* 1. Animasi Mengalirkan Warna Pelangi */
+/* Animasi Mengalirkan Warna Pelangi */
 @keyframes neonShine {
     to { background-position: 200% center; }
 }
 
-/* 2. Animasi Cahaya Menyala Lampu Neon (Glow) Berdenyut */
-@keyframes neonGlowPulse {
+/* PERBAIKAN: Animasi Khusus Cahaya Menyala (Glow) Berdenyut */
+@keyframes textGlowPulse {
     from {
-        filter: drop-shadow(0 0 8px rgba(176, 87, 255, 0.6)) 
-                drop-shadow(0 0 15px rgba(0, 191, 255, 0.4)) 
-                drop-shadow(0 0 30px rgba(176, 87, 255, 0.2)) !important;
+        text-shadow: 0 0 8px rgba(168, 85, 247, 0.6), 
+                     0 0 15px rgba(14, 165, 233, 0.5), 
+                     0 0 25px rgba(168, 85, 247, 0.2) !important;
+        transform: scale(1);
     }
     to {
-        filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.9)) 
-                drop-shadow(0 0 30px rgba(0, 191, 255, 0.7)) 
-                drop-shadow(0 0 50px rgba(138, 43, 226, 0.5)) !important;
-        transform: scale(1.02); /* Sedikit membesar halus saat menyala terang */
+        text-shadow: 0 0 15px rgba(168, 85, 247, 0.9), 
+                     0 0 30px rgba(14, 165, 233, 0.8), 
+                     0 0 45px rgba(236, 72, 153, 0.6) !important;
+        transform: scale(1.03); /* Gerakan slow membesar-mengecil yang stabil */
     }
 }
 
