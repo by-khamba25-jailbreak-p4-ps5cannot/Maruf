@@ -1,7 +1,6 @@
 @import url('https://googleapis.com');
 
 html {
-    /* MEMANGGIL GAMBAR BG.PNG YANG SUDAH ANDA UGGAH DENGAN BENAR */
     background: url('bg.png') no-repeat center center fixed;
     background-size: cover;
     min-height: 100vh;
@@ -11,12 +10,12 @@ html {
     overflow-x: hidden;
 }
 
-/* Lapisan Gelap Tambahan Agar Teks Tetap Jelas Dibaca */
+/* Lapisan Efek Kosmik Gelap agar Konten Lebih Menonjol */
 html::before {
     content: '';
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(5, 2, 15, 0.45); /* Memberikan efek redup kosmik */
+    background: rgba(4, 2, 12, 0.5);
     z-index: -1;
 }
 
@@ -54,18 +53,20 @@ body {
     margin-bottom: 5px;
 }
 
-/* ANIMASI KILAU UNGU & BIRU NEON UTAMAKAN NAMA KHAMBA */
-.name-mustafa {
+/* ANIMASI KILAU PELANGI NEON PREMIUM PADA NAMA KHAMBA */
+.name-mustafa, .name-khamba {
     display: block;
-    font-size: 3.5rem;
-    font-weight: 900;
-    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff);
-    background-size: 200% auto;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: neonShine 3s linear infinite;
-    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6));
-    letter-spacing: 5px;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 3.5rem !important;
+    font-weight: 900 !important;
+    background: linear-gradient(90deg, #b057ff, #00bfff, #ff4757, #b057ff) !important;
+    background-size: 200% auto !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    animation: neonShine 3s linear infinite !important;
+    filter: drop-shadow(0 0 15px rgba(176, 87, 255, 0.6)) !important;
+    letter-spacing: 5px !important;
+    text-transform: none !important;
 }
 
 @keyframes neonShine {
@@ -74,6 +75,7 @@ body {
 
 .ps4-title {
     display: inline-block;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     color: #00bfff;
@@ -83,6 +85,7 @@ body {
 
 .ps5-title {
     display: inline-block;
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.6rem;
     font-weight: 800;
     color: #b057ff;
@@ -123,7 +126,7 @@ hr {
     width: 85%;
 }
 
-/* KOTAK DASBOR: Efek Kaca Gelap Mewah (Blur Transparan) */
+/* DASHBOARD: Efek Kaca Transparan Cyberpunk Mewah */
 #menu, #crypto {
     width: 100%;
     max-width: 460px;
@@ -142,36 +145,43 @@ hr {
 
 #menu h1 {
     font-size: 22px;
-    color: #00bfff !important;
-    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+    color: #ffd700 !important; /* Disamakan warna emas mewah */
+    text-shadow: 0 0 12px rgba(255, 215, 0, 0.4);
     margin-bottom: 25px;
+    font-family: 'Orbitron', sans-serif;
 }
 
-h1#msgs {
-    font-size: 20px;
-    color: #00bfff;
-    margin: 20px auto;
-    padding: 15px;
-    width: 90%;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 12px;
-    border: 1px solid rgba(138, 43, 226, 0.2);
-}
-
-.btn {
-    background: linear-gradient(145deg, #240046, #0f001e);
-    color: white;
-    width: 100%;
-    max-width: 290px;
-    height: 52px;
-    font-size: 16px;
+/* KOTAK STATUS LOADING PADA HALAMAN UTAMA & DALAM */
+h1#msgs, .status-bar {
+    font-size: 19px !important;
+    color: #00bfff !important;
     font-weight: 700;
+    margin: 20px auto !important;
+    padding: 15px !important;
+    width: 90% !important;
+    background: rgba(0, 0, 0, 0.6) !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(138, 43, 226, 0.3) !important;
+    box-sizing: border-box;
+    text-shadow: 0 0 10px rgba(0, 191, 255, 0.4);
+    animation: pulse 1.5s infinite;
+}
+
+/* TOMBOL UTAMA (Sesuai Tombol Emas Elegan Anda) */
+.btn {
+    background: linear-gradient(145deg, #ffd700, #ffaa00) !important;
+    color: #1a1a1a !important;
+    width: 100%;
+    max-width: 400px;
+    height: 60px;
+    font-size: 20px !important;
+    font-weight: 800 !important;
     margin: 10px auto !important;
-    border: 1px solid rgba(164, 99, 255, 0.4);
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: none !important;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
     border-radius: 14px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4) !important;
     font-family: 'Rajdhani', sans-serif;
     letter-spacing: 1px;
     display: block !important;
@@ -179,10 +189,8 @@ h1#msgs {
 }
 
 .btn:hover {
-    background: linear-gradient(145deg, #440080, #240046);
-    transform: scale(1.05) translateY(-2px);
-    box-shadow: 0 0 30px rgba(164, 99, 255, 0.5), 0 0 15px rgba(0, 191, 255, 0.3);
-    border-color: #00bfff;
+    transform: scale(1.04) translateY(-2px);
+    box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6) !important;
 }
 
 #tools, #lnx, #mods, #progress {
@@ -195,18 +203,24 @@ h1#msgs {
     color: #aaa;
 }
 
-.credit-link {
+.credit-link, footer a {
     background: linear-gradient(90deg, #ffd700, #ffaa00);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
     font-size: 1.1rem;
+    text-decoration: none;
 }
 
 .thanks {
     font-size: 0.8rem;
-    color: #555;
+    color: #666;
     margin-top: 5px;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
 }
 
 @media (max-width: 600px) {
@@ -214,7 +228,7 @@ h1#msgs {
         padding: 30px 20px;
         width: 92%;
     }
-    .name-mustafa {
-        font-size: 2.6rem;
+    .name-mustafa, .name-khamba {
+        font-size: 2.6rem !important;
     }
 }
