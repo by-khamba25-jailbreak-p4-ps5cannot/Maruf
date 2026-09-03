@@ -1,8 +1,7 @@
 @import url('https://googleapis.com');
 
 html {
-    background: url('bg.png') no-repeat center center fixed;
-    background-size: cover;
+    background: linear-gradient(135deg, #06020f 0%, #0d0722 50%, #050212 100%) fixed;
     min-height: 100vh;
     color: white;
     text-align: center;
@@ -10,13 +9,8 @@ html {
     overflow-x: hidden;
 }
 
-/* Lapisan Efek Kosmik Gelap agar Konten Lebih Menonjol */
 html::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: rgba(4, 2, 12, 0.55);
-    z-index: -1;
+    content: none !important;
 }
 
 body {
